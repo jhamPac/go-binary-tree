@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Node is a vertex in a graph
 type Node struct {
 	Value int
 	Left  *Node
@@ -13,11 +14,14 @@ func read() []Node {
 	fmt.Scanf("%d", &N)
 
 	nodes := make([]Node, N)
+	fmt.Println(nodes)
 
 	for i := 0; i < N; i++ {
 		var val, indexL, indexR int
 		fmt.Scanf("%d %d %d", &val, &indexL, &indexR)
 		nodes[i].Value = val
+
+		// remember these are just references to the nodes slice which was created up above with the make
 		if indexL >= 0 {
 			nodes[i].Left = &nodes[indexL]
 		}
