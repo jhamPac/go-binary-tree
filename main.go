@@ -13,6 +13,7 @@ func read() []Node {
 	var N int
 	fmt.Scanf("%d", &N)
 
+	// this slice looks like: [{0 <nil> <nil>} {0 <nil> <nil>} {0 <nil> <nil>} {0 <nil> <nil>} {0 <nil> <nil>}]
 	nodes := make([]Node, N)
 	fmt.Printf("Before in read function: %v\n", nodes)
 
