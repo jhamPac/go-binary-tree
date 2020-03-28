@@ -14,7 +14,7 @@ func read() []Node {
 	fmt.Scanf("%d", &N)
 
 	nodes := make([]Node, N)
-	fmt.Println(nodes)
+	fmt.Printf("Before in read function: %v\n", nodes)
 
 	for i := 0; i < N; i++ {
 		var val, indexL, indexR int
@@ -49,9 +49,10 @@ func printNode(n *Node) {
 }
 
 func main() {
-	test := &Node{Value: 9}
-	right := &Node{Value: 11}
+	nodes := read()
 
-	test.Right = right
-	printNode(test)
+	fmt.Print("After in main function: \n")
+	for _, node := range nodes {
+		printNode(&node)
+	}
 }
