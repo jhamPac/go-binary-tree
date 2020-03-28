@@ -8,6 +8,28 @@ type Node struct {
 	Right *Node
 }
 
+func read() []Node {
+	var N int
+	fmt.Scanf("%d", &N)
+
+	nodes := make([]Node, N)
+
+	for i := 0; i < N; i++ {
+		var val, indexL, indexR int
+		fmt.Scanf("%d %d %d", &val, &indexL, &indexR)
+		nodes[i].Value = val
+		if indexL >= 0 {
+			nodes[i].Left = &nodes[indexL]
+		}
+
+		if indexR >= 0 {
+			nodes[i].Right = &nodes[indexR]
+		}
+	}
+
+	return nodes
+}
+
 func printNode(n *Node) {
 	fmt.Print("Value: ", n.Value)
 
